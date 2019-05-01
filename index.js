@@ -108,8 +108,8 @@ function multipart (options) {
       done = true;
 
       // expand names with qs & assign
-      req.body = qs.parse(data, { allowDots: true })
-      req.files = qs.parse(files, { allowDots: true })
+      req.body = qs.parse(data, { allowDots: true, depth: Infinity })
+      req.files = qs.parse(files, { allowDots: true, depth: Infinity })
 
       next()
     });
